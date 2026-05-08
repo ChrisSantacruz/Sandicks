@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+aiogram
+python-dotenv
+huggingface_hub
+httpx
+groq
+pillow
+loguru
+pydantic
+pydantic-settings
