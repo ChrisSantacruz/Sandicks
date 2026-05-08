@@ -37,7 +37,7 @@ class Settings(BaseSettings):
     prompt_output_max_words: int = 70
 
     mascot_image_path: Path = Path("images/personaje.jpg")
-    prompts_root: Path = Path(".ai/prompts")
+    prompts_root: Path = Path("src/prompts")
     outputs_dir: Path = Path("outputs")
     fonts_dir: Path = Path("fonts")
     logo_path: Path = Path("images/logo.png")

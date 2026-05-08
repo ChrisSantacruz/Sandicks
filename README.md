@@ -41,3 +41,4 @@ Variables de app recomendadas:
 - `APP_HOST=0.0.0.0`
 
 Nota: Render inyecta `PORT` automaticamente y la app ya lo toma para iniciar correctamente.
+Los prompts viven en `src/prompts` para que queden versionados en el repo y disponibles en deploy.
