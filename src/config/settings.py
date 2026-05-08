@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     app_env: str = "dev"
     app_host: str = "0.0.0.0"
     app_port: int = 8000
+    app_reload: bool = False
     log_level: str = "INFO"
 
     telegram_bot_token: str = Field(..., description="Telegram Bot API token.")

@@ -29,6 +29,8 @@ async def start_bot_polling(
         token=settings.telegram_bot_token,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML),
     )
+    # Ensure polling mode is active and avoid webhook/polling clashes.
+    await bot.delete_webhook(drop_pending_updates=False)
 
     polling_task = asyncio.create_task(dispatcher.start_polling(bot))
     logger.info("Telegram polling started")

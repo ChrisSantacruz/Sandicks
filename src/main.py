@@ -14,11 +14,12 @@ def run() -> None:
     """Run the application with uvicorn."""
     settings = get_settings()
     port = int(os.getenv("PORT", str(settings.app_port)))
+    reload_enabled = settings.app_reload and settings.app_env == "dev"
     uvicorn.run(
         "src.main:app",
         host=settings.app_host,
         port=port,
-        reload=settings.app_env == "dev",
+        reload=reload_enabled,
     )
 
 
