@@ -1,5 +1,7 @@
 """Application entrypoint."""
 
+import os
+
 import uvicorn
 
 from src.api.app import create_app
@@ -11,10 +13,11 @@ app = create_app()
 def run() -> None:
     """Run the application with uvicorn."""
     settings = get_settings()
+    port = int(os.getenv("PORT", str(settings.app_port)))
     uvicorn.run(
         "src.main:app",
         host=settings.app_host,
-        port=settings.app_port,
+        port=port,
         reload=settings.app_env == "dev",
     )
 

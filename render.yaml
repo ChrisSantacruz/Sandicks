@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: sandicks-bot
+    env: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m src.main
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: prod
+      - key: APP_HOST
+        value: 0.0.0.0
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_ALLOWED_CHAT_ID
+        sync: false
+      - key: HUGGINGFACE_TOKEN
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
